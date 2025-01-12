@@ -115,7 +115,9 @@ h2 {
 }
 @media (width>= 750px) {
   .review__section {
-    gap: 0;
+    gap: 1rem;
+    grid-template-rows: repeat(3, min-content);
+    align-content: center;
   }
   .review__card {
     flex-direction: row;
@@ -143,13 +145,14 @@ h2 {
   justify-items: center;
   padding-bottom: 3rem;
 }
-@media (width >= 750px) {
+@media (width >= 750px) and (width <= 1250px) {
   .comments__section {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
   .comment:nth-child(3) {
     grid-column: span 2;
-    justify-content: center;
+    justify-self: center;
+    width: min(400px, 50%);
   }
 }
 @media (width >= 1200px) {
@@ -158,11 +161,6 @@ h2 {
     min-height: 300px;
   }
 }
-/* @media (min-width: 750px) {
-  .comments__section {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-} */
 .comment {
   background-color: var(--comment-card-clr);
   padding: 1.5rem 1.2rem;
